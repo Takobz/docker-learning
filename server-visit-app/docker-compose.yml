@@ -1,0 +1,11 @@
+version: '3'
+
+# services means a type of container
+# create containers
+services:
+  redis-server:
+    image: redis #find image from cache/dockerhub
+  node-app:
+    build: . # create image from building Dockerfile current directory.
+    ports:
+     - "4001:8081" # map machine port 4001 to container 8081
