@@ -9,4 +9,8 @@ COPY . .
 
 CMD ["npm", "run", "start"]
 
-#To build dev file use: docker build -f Dockerfile.dev
+# To build dev file use: docker build -f Dockerfile.dev .
+# To map refernces of directories in our docker image we can use:
+# docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app. -v flag
+# running tests in container from this image: docker run -it <image-id> npm run test
+ 
