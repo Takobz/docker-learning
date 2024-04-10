@@ -19,3 +19,6 @@ services:
      - /app/node_modules # add node_mdoules
      - .:/app # map current directory to app in container
     command: ['npm', 'run', 'test'] # the start up command is the npm run test
+
+    # docker attach <container-id> - will attach to the first primary process in the container
+    # for ['npm', 'run', 'test'] - the npm will be the primary process and run test will run as separate processes.
