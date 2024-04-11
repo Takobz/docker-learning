@@ -2,10 +2,12 @@ FROM node:16-alpine
 
 WORKDIR '/app'
 
-COPY package.json .
+# for travis yaml in root dir
+COPY ./prod-workflow-project/frontend/package.json .
 RUN npm install
 
-COPY . .
+# changed for travis yaml in root
+COPY ./prod-workflow-project/frontend .
 
 CMD ["npm", "run", "start"]
 

@@ -1,0 +1,13 @@
+sudo: required #we need super user 
+services:
+ - docker #install docker in travis
+
+# set up before running tests
+# install build dev dockerfile which will build our stuff
+before_install:
+  - docker build -t khutso/docker-react -f ./prod-workflow-project/frontend/Dockerfile.dev .
+
+# run image to start the test.
+# add coverage for travis ci to see if tests failed or passed.
+script:
+  - docker run -e CI=true khutso/docker-react npm run test -- --coverage
