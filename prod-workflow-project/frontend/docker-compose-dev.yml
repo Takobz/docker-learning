@@ -22,3 +22,7 @@ services:
 
     # docker attach <container-id> - will attach to the first primary process in the container
     # for ['npm', 'run', 'test'] - the npm will be the primary process and run test will run as separate processes.
+    # renamed to docker-compose-dev.yml for AWS
+    # start docker-compose -f docker-compose-dev.yml up
+    # build docker-compose -f docker-compose-dev.yml up --build
+    # stop docker-compose -f docker-compose-dev.yml down
