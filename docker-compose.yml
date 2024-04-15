@@ -4,6 +4,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: ./prod-workflow-project/frontend/Dockerfile
     ports:
       - '80:80'
