@@ -13,12 +13,14 @@ script:
   - docker run -e CI=true khutso/docker-react npm run test -- --coverage
 
 # tell travis to deploy our app to AWS.
-# deploy:
-#   provider: elasticbeanstalk # deploy to AWS ElasticBeanstalk
-#   region: 'eu-north-1' # region where elsaticneanstalk has been deployed to
-#   app: 'frontend' # the application name in my elasticbenastalk
-#   env: 'Frontend-env' # environment for application as seen in AWS
-#   bucket_name: 'elasticbeanstalk-eu-north-1-533267286361' # bucket that will store my files in AWS (S3 created with ElasticBeanstalk)
-#   bucket_path: 'frontend' # same as app for initial deployments
-#   on:
-#     branch: main
+deploy:
+  provider: elasticbeanstalk # deploy to AWS ElasticBeanstalk
+  region: 'eu-north-1' # region where elsaticneanstalk has been deployed to
+  app: 'frontend' # the application name in my elasticbenastalk
+  env: 'Frontend-env' # environment for application as seen in AWS
+  bucket_name: 'elasticbeanstalk-eu-north-1-533267286361' # bucket that will store my files in AWS (S3 created with ElasticBeanstalk)
+  bucket_path: 'frontend' # same as app for initial deployments
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: '$AWS_SECRET_KEY'
