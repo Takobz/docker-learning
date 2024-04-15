@@ -1,3 +1,4 @@
+# docker compose for AWS
 version: '3'
 services:
   web:

@@ -14,6 +14,8 @@ RUN npm run build
 
 # run phase
 FROM nginx
+# For ElasticBeanStalk to map port to incoming trafic.
+EXPOSE 80
 # copy build folder --from=<phase-name>
 # copies app/build contents from builder phase to specified dir. /usr/share/nginx/html is nginx default dir for hosting static sites
 # ngnix base image has startup command to start nginx server.
